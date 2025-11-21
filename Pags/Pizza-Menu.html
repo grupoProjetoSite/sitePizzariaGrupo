@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style-global.css">
+    <link rel="stylesheet" href="../style/style-pizza-menu.css">
+    <title>Slice Pizzaria - Cardápio</title>
+</head>
+<body>
+
+    <header class="faixa">
+        <nav>
+            <ul>
+                <li><a href="Pizza-Menu.html">Cardápio</a></li>
+                <li><a href="#Link2">Link2</a></li>
+                <li><a href="#Link3">Link3</a></li>
+            </ul>
+        </nav>
+        <header class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.jpeg" alt="Logo">
+            </a>
+        </header>
+    </header>
+    
+    <main>
+        <section class="menu-container">
+            <div class="titulo-secao">
+                <h1 style="text-align: left; margin-bottom: 5px;">Pizzas</h1>
+                <p style="color: #666; margin-top: 0;">Escolha o tamanho ideal para sua fome:</p>
+            </div>
+            
+            <div class="tamanhos-grid">
+                <div class="card-tamanho" onclick="abrirCardapio('Broto')">
+                    <h3>Broto (4 Fatias)</h3>
+                    <p>Ideal para uma pessoa.</p>
+                    <p class="preco-destaque">A partir de <strong>R$ 20,00</strong></p>
+                    <button class="btn-selecionar">Ver Sabores</button>
+                </div>
+
+                <div class="card-tamanho" onclick="abrirCardapio('Média')">
+                    <h3>Média (8 Fatias)</h3>
+                    <p>Perfeita para dividir em dois.</p>
+                    <p class="preco-destaque">A partir de <strong>R$ 35,00</strong></p>
+                    <button class="btn-selecionar">Ver Sabores</button>
+                </div>
+
+                <div class="card-tamanho" onclick="abrirCardapio('Gigante')">
+                    <h3>Gigante (16 Fatias)</h3>
+                    <p>Para a família toda!</p>
+                    <p class="preco-destaque">A partir de <strong>R$ 50,00</strong></p>
+                    <button class="btn-selecionar">Ver Sabores</button>
+                </div>
+            </div>
+
+            <hr style="margin: 50px 0; border: 0; border-top: 1px solid #e0e0e0;">
+
+            <div class="titulo-secao">
+                <h1 style="text-align: left; margin-bottom: 5px;">Bebidas</h1>
+                <p style="color: #666; margin-top: 0;">Para acompanhar:</p>
+            </div>
+            
+            <div class="bebidas-grid">
+                <div class="card-bebida">
+                    <h3>Refrigerante 2L</h3>
+                    <p>Coca-Cola, Guaraná, Sprite</p>
+                    <span class="preco">R$ 12,00</span>
+                    <button class="btn-selecionar">Adicionar</button>
+                </div>
+
+                <div class="card-bebida">
+                    <h3>Refrigerante Lata</h3>
+                    <p>350ml - Diversos Sabores</p>
+                    <span class="preco">R$ 6,00</span>
+                    <button class="btn-selecionar">Adicionar</button>
+                </div>
+
+                <div class="card-bebida">
+                    <h3>Sucos Naturais</h3>
+                    <p>Laranja, Limão, Maracujá</p>
+                    <span class="preco">R$ 10,00</span>
+                    <button class="btn-selecionar">Adicionar</button>
+                </div>
+
+                <div class="card-bebida">
+                    <h3>Cerveja Long Neck</h3>
+                    <p>Heineken, Stella, Budweiser</p>
+                    <span class="preco">R$ 9,00</span>
+                    <button class="btn-selecionar">Adicionar</button>
+                </div>
+            </div>
+
+        </section> 
+    </main>
+
+    <footer class="rodape">
+        <div class="rodape-conteudo">
+            <div class="rodape-secao">
+                <h3>Localização</h3>
+                <p>Rua da Pizza Fictícia, 123</p>
+                <p>Bairro Saboroso - Cidade, SP</p>
+                <p>CEP: 12345-678</p>
+            </div>
+
+            <div class="rodape-secao">
+                <h3>Contato</h3>
+                <p><strong>Telefone:</strong> (11) 98765-4321</p>
+                <p><strong>Email:</strong> contato@slicepizzaria.com</p>
+            </div>
+
+            <div class="rodape-secao">
+                <h3>Siga-nos</h3>
+                <p>Veja mais nas nossas redes!</p>
+                <div class="rodape-social">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="rodape-bottom">
+            <p>&copy; 2025 Slice Pizzaria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="modal-sabores" class="modal-fundo">
+        <div class="modal-conteudo-sabores">
+            
+            <div class="modal-header-sabores">
+                <div class="titulo-modal">
+                    <h2 id="titulo-tamanho">Montar Pizza</h2>
+                    <p id="aviso-limite" style="font-size: 0.9em; color: #e63946; margin: 0;">Selecione até X sabores</p>
+                </div>
+                <span class="fechar-modal" onclick="fecharCardapio()">&times;</span>
+            </div>
+
+            <div class="abas-sabores">
+                <button class="tab-btn ativo" onclick="trocarAba('salgada')">🍕 Salgadas</button>
+                <button class="tab-btn" onclick="trocarAba('doce')">🍫 Doces</button>
+            </div>
+
+            <div class="area-scroll-sabores">
+                <div id="lista-salgada" class="lista-conteudo ativo">
+                    <label class="item-opcao">
+                        <span>Mussarela</span>
+                        <input type="checkbox" name="sabor" value="Mussarela" onclick="controlarLimite(this)">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="item-opcao">
+                        <span>Calabresa</span>
+                        <input type="checkbox" name="sabor" value="Calabresa" onclick="controlarLimite(this)">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="item-opcao">
+                        <span>Portuguesa</span>
+                        <input type="checkbox" name="sabor" value="Portuguesa" onclick="controlarLimite(this)">
+                        <span class="checkmark"></span>
+                    </label>
+                     <label class="item-opcao">
+                        <span>Frango c/ Catupiry</span>
+                        <input type="checkbox" name="sabor" value="Frango c/ Catupiry" onclick="controlarLimite(this)">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <div id="lista-doce" class="lista-conteudo">
+                    <label class="item-opcao">
+                        <span>Chocolate com Morango</span>
+                        <input type="checkbox" name="sabor" value="Chocolate c/ Morango" onclick="controlarLimite(this)">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="item-opcao">
+                        <span>Romeu e Julieta</span>
+                        <input type="checkbox" name="sabor" value="Romeu e Julieta" onclick="controlarLimite(this)">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="secao-borda">
+                <h3>Escolha a Borda</h3>
+                <div class="opcoes-borda">
+                    <label class="radio-borda">
+                        <input type="radio" name="borda" value="Tradicional" checked>
+                        Tradicional
+                    </label>
+                    <label class="radio-borda">
+                        <input type="radio" name="borda" value="Catupiry">
+                        Catupiry (+ R$ 5,00)
+                    </label>
+                    <label class="radio-borda">
+                        <input type="radio" name="borda" value="Cheddar">
+                        Cheddar (+ R$ 5,00)
+                    </label>
+                </div>
+            </div>
+
+            <button class="btn-confirmar-pedido" onclick="adicionarAoCarrinhoComposto()">
+                Adicionar ao Carrinho
+            </button>
+
+        </div>
+    </div>
+</div>
+</div>
+
+    <script src="../scripts/main.js"></script>
+
+</body>
+</html>
