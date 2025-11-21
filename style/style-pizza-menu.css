@@ -1,0 +1,317 @@
+.menu-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.menu-container h1 {
+    text-align: left;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.titulo-secao p {
+    color: #666;
+    font-size: 1.1em;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.tamanhos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.card-tamanho {
+    background: white;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 30px;
+    width: 260px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.card-tamanho:hover {
+    transform: translateY(-5px);
+    border-color: #e63946;
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.15);
+}
+
+.card-tamanho h3 {
+    color: #e63946;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.card-tamanho p {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.card-tamanho .preco-destaque {
+    color: #333;
+    margin: 20px 0;
+    font-size: 0.9em;
+}
+
+.card-tamanho .preco-destaque strong {
+    color: #e63946;
+    font-size: 1.4em;
+    display: block;
+    margin-top: 5px;
+}
+
+.btn-selecionar {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-selecionar:hover {
+    background-color: #d0303c;
+}
+
+/* --- GRADE DE BEBIDAS --- */
+.bebidas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.card-bebida {
+    background: #fff;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-bebida:hover {
+    transform: scale(1.05);
+    border-color: #e63946;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-bebida h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.card-bebida p {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.card-bebida .preco {
+    display: block;
+    margin: 10px 0 15px 0;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.card-bebida .btn-selecionar {
+    margin-top: auto;
+}
+
+
+.modal-fundo {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-conteudo-sabores {
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh; 
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-header-sabores {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.titulo-modal h2 {
+    margin: 0;
+    color: #333;
+}
+
+.fechar-modal {
+    font-size: 30px;
+    cursor: pointer;
+    color: #999;
+    line-height: 0.8;
+}
+
+.fechar-modal:hover {
+    color: #e63946;
+}
+
+.abas-sabores {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.1em;
+    cursor: pointer;
+    color: #777;
+    border-bottom: 3px solid transparent;
+    transition: color 0.3s;
+}
+
+.tab-btn.ativo {
+    color: #e63946;
+    border-bottom: 3px solid #e63946;
+    font-weight: bold;
+}
+
+.area-scroll-sabores {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding-right: 5px;
+}
+
+.area-scroll-sabores::-webkit-scrollbar {
+    width: 8px;
+}
+.area-scroll-sabores::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.lista-conteudo {
+    display: none;
+}
+
+.lista-conteudo.ativo {
+    display: block;
+}
+
+.item-opcao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px dashed #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.item-opcao:hover {
+    background-color: #f9f9f9;
+}
+
+.item-opcao span {
+    font-size: 1.1em;
+    color: #444;
+}
+
+.item-opcao input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #e63946;
+    cursor: pointer;
+}
+
+.secao-borda {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.secao-borda h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.opcoes-borda {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.radio-borda {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.radio-borda input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #e63946;
+}
+
+.btn-confirmar-pedido {
+    width: 100%;
+    background-color: #2a9d8f;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    flex-shrink: 0;
+}
+
+.btn-confirmar-pedido:hover {
+    background-color: #21867a;
+    transform: translateY(-2px);
+}

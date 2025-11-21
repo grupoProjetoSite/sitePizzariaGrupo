@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/style-global.css">
+    <title>Oferta</title>
+</head>
+<style>
+        .combo-container { 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 20px; 
+        }
+        
+        .header-combo {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #e63946;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.1);
+        }
+
+        .header-combo h1 {
+            color: #e63946;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .preco-box { margin-top: 15px; }
+        .preco-de { color: #777; text-decoration: line-through; font-size: 1.2em; }
+        .preco-por { color: #2a9d8f; font-size: 2em; font-weight: bold; }
+        .tag-desconto { background-color: #2a9d8f; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.5em; vertical-align: middle; }
+
+        .passo-combo { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 10px; 
+            border: 1px solid #eee; 
+            margin-bottom: 20px; 
+        }
+        
+        .passo-combo h3 { 
+            color: #333; 
+            border-bottom: 1px solid #eee; 
+            padding-bottom: 15px; 
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .label-sabor {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+            margin-top: 15px;
+        }
+
+        .select-combo { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            font-size: 1em;
+            background-color: #f9f9f9;
+        }
+
+        .grid-sabores {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .grid-sabores { grid-template-columns: 1fr; }
+        }
+
+        .btn-adicionar-combo { 
+            width: 100%; 
+            padding: 20px; 
+            background-color: #e63946; 
+            color: white; 
+            font-size: 1.5em; 
+            font-weight: bold; 
+            border: none; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            transition: background 0.3s, transform 0.2s;
+        }
+        
+        .btn-adicionar-combo:hover { 
+            background-color: #d0303c; 
+            transform: translateY(-2px);
+        }
+    </style>
+<body>
+         <header class="faixa">
+        <nav>
+            <ul>
+                <li><a href="../../Pags/Pizza-Menu.html">Cardápio</a></li>
+            </ul>
+        </nav>
+        <header class="logo">
+            <a href="../../index.html">
+                <img src="../../images/logo.jpeg" alt="Logo">
+            </a>
+        </header>
+    </header>
+    
+    <main>
+        <div class="combo-container">
+            
+            <div class="header-combo">
+                <h1>Combo Família</h1>
+                <p>1 Gigante (4 Sabores) + 1 Média (2 Sabores) + 2 Refris</p>
+                <div class="preco-box">
+                    <div class="preco-de">De R$ 109,00</div>
+                    <div class="preco-por">Por R$ 81,75 <span class="tag-desconto">25% OFF</span></div>
+                </div>
+            </div>
+
+            <div class="passo-combo">
+                <h3>1. Monte sua Gigante Salgada (Até 4 sabores)</h3>
+                <div class="grid-sabores">
+                    <div>
+                        <label class="label-sabor">Sabor 1 (Obrigatório)</label>
+                        <select id="g-sabor1" class="select-combo">
+                            <option value="" disabled selected>Escolha...</option>
+                            <option value="Mussarela">Mussarela</option>
+                            <option value="Calabresa">Calabresa</option>
+                            <option value="Portuguesa">Portuguesa</option>
+                            <option value="Frango c/ Catupiry">Frango c/ Catupiry</option>
+                            <option value="Marguerita">Marguerita</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-sabor">Sabor 2 (Opcional)</label>
+                        <select id="g-sabor2" class="select-combo">
+                            <option value="">Apenas o anterior...</option>
+                            <option value="Mussarela">Mussarela</option>
+                            <option value="Calabresa">Calabresa</option>
+                            <option value="Portuguesa">Portuguesa</option>
+                            <option value="Frango c/ Catupiry">Frango c/ Catupiry</option>
+                            <option value="Marguerita">Marguerita</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-sabor">Sabor 3 (Opcional)</label>
+                        <select id="g-sabor3" class="select-combo">
+                            <option value="">Apenas os anteriores...</option>
+                            <option value="Mussarela">Mussarela</option>
+                            <option value="Calabresa">Calabresa</option>
+                            <option value="Portuguesa">Portuguesa</option>
+                            <option value="Frango c/ Catupiry">Frango c/ Catupiry</option>
+                            <option value="Marguerita">Marguerita</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-sabor">Sabor 4 (Opcional)</label>
+                        <select id="g-sabor4" class="select-combo">
+                            <option value="">Apenas os anteriores...</option>
+                            <option value="Mussarela">Mussarela</option>
+                            <option value="Calabresa">Calabresa</option>
+                            <option value="Portuguesa">Portuguesa</option>
+                            <option value="Frango c/ Catupiry">Frango c/ Catupiry</option>
+                            <option value="Marguerita">Marguerita</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="passo-combo">
+                <h3>2. Monte sua Média Doce (Até 2 sabores)</h3>
+                <div class="grid-sabores">
+                    <div>
+                        <label class="label-sabor">Sabor 1 (Obrigatório)</label>
+                        <select id="d-sabor1" class="select-combo">
+                            <option value="" disabled selected>Escolha...</option>
+                            <option value="Chocolate com Morango">Chocolate com Morango</option>
+                            <option value="Romeu e Julieta">Romeu e Julieta</option>
+                            <option value="Banana com Canela">Banana com Canela</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-sabor">Sabor 2 (Opcional)</label>
+                        <select id="d-sabor2" class="select-combo">
+                            <option value="">Apenas o anterior...</option>
+                            <option value="Chocolate com Morango">Chocolate com Morango</option>
+                            <option value="Romeu e Julieta">Romeu e Julieta</option>
+                            <option value="Banana com Canela">Banana com Canela</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="passo-combo">
+                <h3>3. Escolha as Bebidas (2 Unidades de 2L)</h3>
+                <div class="grid-sabores">
+                    <div>
+                        <label class="label-sabor">Refrigerante 1</label>
+                        <select id="refri1" class="select-combo">
+                            <option value="" disabled selected>Escolha...</option>
+                            <option value="Coca-Cola 2L">Coca-Cola 2L</option>
+                            <option value="Guaraná 2L">Guaraná 2L</option>
+                            <option value="Sprite 2L">Sprite 2L</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-sabor">Refrigerante 2</label>
+                        <select id="refri2" class="select-combo">
+                            <option value="" disabled selected>Escolha...</option>
+                            <option value="Coca-Cola 2L">Coca-Cola 2L</option>
+                            <option value="Guaraná 2L">Guaraná 2L</option>
+                            <option value="Sprite 2L">Sprite 2L</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-adicionar-combo" onclick="finalizarPedido()">
+                FINALIZAR PEDIDO
+            </button>
+        </div>
+    </main>
+
+    <script>
+        function finalizarPedido() {
+            // Coleta os valores obrigatórios
+            let g1 = document.getElementById('g-sabor1').value;
+            let d1 = document.getElementById('d-sabor1').value;
+            let r1 = document.getElementById('refri1').value;
+            let r2 = document.getElementById('refri2').value;
+
+            // Validação básica
+            if(g1 === "" || d1 === "" || r1 === "" || r2 === "") {
+                alert("Por favor, preencha todos os itens obrigatórios!");
+                return;
+            }
+
+            // Apenas confirma
+            alert("Pedido do Combo Família realizado com sucesso!");
+            // Opcional: Redirecionar para a home
+            // window.location.href = "../../index.html";
+        }
+    </script>
+
+    <footer class="rodape">
+        <div class="rodape-conteudo">
+
+            <div class="rodape-secao">
+                <h3>Localização</h3>
+                <p>Rua da Pizza Fictícia, 123</p>
+                <p>Bairro Saboroso - Cidade, SP</p>
+                <p>CEP: 12345-678</p>
+            </div>
+
+            <div class="rodape-secao">
+                <h3>Contato</h3>
+                <p><strong>Telefone:</strong> (11) 98765-4321</p>
+                <p><strong>Email:</strong> contato@slicepizzaria.com</p>
+            </div>
+
+            <div class="rodape-secao">
+                <h3>Siga-nos</h3>
+                <p>Veja mais nas nossas redes!</p>
+                <div class="rodape-social">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="rodape-bottom">
+            <p>&copy; 2025 Slice Pizzaria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
